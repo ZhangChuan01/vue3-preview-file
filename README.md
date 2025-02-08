@@ -4,10 +4,8 @@ vue3-preview-file
 ### 可预览word，excel，图片，pdf
 #### 如何使用
 ##### 1. 安装
-    ```  
     yarn add vue3-preview-file --save
     npm install vue3-preview-file --save
-    ```
 ##### 2. 引入    
     引入css   
     import "vue3-preview-file/dist/style.css";    
@@ -17,12 +15,10 @@ vue3-preview-file
         import { PreviewFile } from 'vue3-preview-file/dist'   
         全局注册
         import Vue3PreviewFile from 'vue3-preview-file/dist'    
-        ```
         app.use(Vue3PreviewFile)
             .mount('#app')
-        ```
-##### 3. 使用   
-      [详细使用](https://github.com/ZhangChuan01/vue3-preview-file/blob/main/src/App.vue)
+##### 3. 使用demo     
+[详细使用](https://github.com/ZhangChuan01/vue3-preview-file/blob/main/src/App.vue)
 ##### 4. 详细参数设置        
     dialogVisible(必传，boolean，组件显示与隐藏)    
 
