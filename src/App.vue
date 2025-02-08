@@ -12,6 +12,8 @@ const download = reactive({
   method: 'get',
   params: {}
 })
+
+// 预览Excel
 const preview1 = () => {
   file.name = '班组作业效率分析2024.xlsx'
   file.filePath = 'http://192.168.8.181:44382/Inventory/2024/2024-11-18/班组作业效率分析2024.xlsx'
@@ -20,12 +22,13 @@ const preview1 = () => {
   }
   dialogVisible.value = true
 }
-
+// 预览图片
 const preview2 = () => {
   file.name = 'belt.png'
   file.filePath = 'http://192.168.8.181:44382/Inventory/2024/2024-11-18/belt.png'
   dialogVisible.value = true
 }
+// 预览PDF
 const preview3 = () => {
   file.name = 'DZFP_371_3ce4dc30-e866-4c9b-be59-23808057e308.pdf'
   file.filePath = 'http://192.168.8.181:44382/Inventory/2024/2024-11-18/DZFP_371_3ce4dc30-e866-4c9b-be59-23808057e308.pdf'
@@ -34,6 +37,8 @@ const preview3 = () => {
   }
   dialogVisible.value = true
 }
+
+// 预览Word
 const preview4 = () => {
   file.name = 'jenkins前端项目配置.docx'
   file.filePath = '/wwwroot/Inventory/2025/2025-02-08/jenkins前端项目配置.docx'
