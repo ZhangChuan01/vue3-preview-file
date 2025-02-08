@@ -1,3 +1,10 @@
-import PreviewComponent from './components/PreviewComponent.vue'
+import { App } from 'vue'
+import PreviewFile from './components/PreviewFile.vue'
 
-export { PreviewComponent }
+export default {
+  install: (app: App) => {
+    app.component('PreviewFile', PreviewFile)
+  }
+}
+
+export { PreviewFile }

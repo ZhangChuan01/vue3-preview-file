@@ -1,6 +1,6 @@
 {
   "name": "vue3-preview-file",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "type": "module",
   "description": "vue3-preview-file",
   "files": [
@@ -25,18 +25,17 @@
     "axios": "^1.7.9",
     "canvas-datagrid": "^0.4.7",
     "docx-preview": "^0.3.4",
-    "element-plus": "^2.9.3",
     "pdfjs-dist": "4.4.168",
-    "reset-css": "^5.0.1",
-    "sass": "^1.58.0",
-    "sass-loader": "^13.2.0",
-    "stylelint-config-standard": "^29.0.0",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "uuid": "^10.0.0",
-    "vue": "^3.2.37",
+    "sass": "^1.84.0",
+    "sass-loader": "^16.0.4",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "reset-css": "^5.0.1",
+    "vue": "^3.2.37",
+    "element-plus": "^2.9.3",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
     "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.19.1",
     "@types/node": "^20.4.5",
@@ -64,6 +63,10 @@
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
     "vue-tsc": "^0.39.5"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37",
+    "element-plus": "^2.9.3"
   },
   "main": "index.js",
   "author": "zc"

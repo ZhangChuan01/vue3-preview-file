@@ -1,11 +1,11 @@
 <script lang="ts">
-interface DownLoad {
+export interface DownLoad {
   url: string
   method: string
   data?: any
   params?: any
 }
-interface FileInfo {
+export interface FileInfo {
   name: string
   filePath: string
 }
@@ -16,7 +16,7 @@ import * as xlsx from 'xlsx'
 import canvasDatagrid from 'canvas-datagrid'
 import { loadPdf } from './previewPdf'
 import axios from 'axios'
-import { ElDialog,ElMessage } from 'element-plus'
+import { ElDialog } from 'element-plus'
 
 const emits = defineEmits<{
   (e:'update:dialogVisible', dialogVisible: boolean): void
@@ -47,7 +47,7 @@ const downloadFileApi = (type:any = 'blob') =>{
   })
 }
 
-let sheetNames = ref<any>([]),activeSheet = ref(0),grid:any = {},workbook:any = null
+let sheetNames = ref<any>([]),activeSheet = ref(0),grid:any = {},workbook:any = null,showError = ref(false)
 const getFileData = async () => {
   await nextTick()
   const type = props.file.name.substring(props.file.name.lastIndexOf('.') + 1)
@@ -58,7 +58,7 @@ const getFileData = async () => {
     console.log('res: ', res)
     if(res.data){
       docxPreview.renderAsync(res.data, privewContainer).catch(error => {
-        ElMessage.error('文件解析失败无法预览，请尝试下载到本地查看')
+        showError.value = true
       })
     }
   }else if(type === 'jpg' || type === 'jpeg' || type === 'png'){
@@ -95,36 +95,61 @@ const sheetChange = (index: number) => {
   console.log('grid: ' , grid,workbook.Sheets[sheetNames.value[index]])
   grid.data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetNames.value[index]])
 }
+const resetData = () => {
+  sheetNames.value = []
+  activeSheet.value = 0
+  grid = {}
+  workbook = null
+}
 watch(dialogShow,val => {
   console.log('val: ', val)
   if(val){
     getFileData()
+  }else{
+    resetData()
   }
 })
-
 </script>
 <template>
-  <el-dialog
-    v-model="dialogShow"
-    title="预览"
-    destroy-on-close
-    v-bind="$attrs"
-  >
-    <div class="privew-container" />
-    <div class="sheet-wrapper">
+  <div>
+    <el-dialog
+      v-model="dialogShow"
+      title="预览"
+      destroy-on-close
+      v-bind="$attrs"
+    >
       <div
-        v-for="(item,index) in sheetNames"
-        :key="item"
-        :class="['sheet',{active: index === activeSheet}]"
-        @click="sheetChange(index)"
+        v-if="showError"
+        class="error-msg"
+        style="margin-top: 20px;color: #d73a49;font-weight: 600;text-align: center;"
       >
-        {{ item }}
+        文件解析失败无法预览，请尝试下载至本地查看
       </div>
-    </div>
-  </el-dialog>
+      <div
+        v-if="!showError"
+        class="privew-container"
+      />
+      <div
+        v-if="!showError"
+        class="sheet-wrapper"
+      >
+        <div
+          v-for="(item,index) in sheetNames"
+          :key="item"
+          :class="['sheet',{active: index === activeSheet}]"
+          @click="sheetChange(index)"
+        >
+          {{ item }}
+        </div>
+      </div>
+    </el-dialog>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+:deep(.el-overlay) {
+  z-index: 9999 !important;
+}
 .privew-container {
   width: 100%;
   height: 600px;

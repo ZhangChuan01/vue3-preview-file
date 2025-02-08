@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PreviewComponent from './components/PreviewComponent.vue'
+import PreviewFile from './components/PreviewFile.vue'
 import { ElButton } from 'element-plus'
 
 let dialogVisible = ref(false)
@@ -35,10 +35,10 @@ const preview3 = () => {
   dialogVisible.value = true
 }
 const preview4 = () => {
-  file.name = 'Babylonjs技术调研.docx'
-  file.filePath = '/wwwroot/Inventory/2025/2025-02-07/Babylonjs技术调研.docx'
+  file.name = 'jenkins前端项目配置.docx'
+  file.filePath = '/wwwroot/Inventory/2025/2025-02-08/jenkins前端项目配置.docx'
   download.params = {
-    filePath: '/wwwroot/Inventory/2025/2025-02-07/Babylonjs技术调研.docx'
+    filePath: '/wwwroot/Inventory/2025/2025-02-08/jenkins前端项目配置.docx'
   }
   dialogVisible.value = true
 }
@@ -69,7 +69,7 @@ const preview4 = () => {
   >
     预览word
   </el-button>
-  <PreviewComponent
+  <PreviewFile
     v-model:dialog-visible="dialogVisible"
     :download="download"
     :file="file"
