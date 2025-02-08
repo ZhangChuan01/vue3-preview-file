@@ -1,18 +1,18 @@
 {
-  "name": "vue3-preview-compent",
+  "name": "vue3-preview-file",
   "version": "0.0.1",
   "type": "module",
-  "description": "vue3-preview-compent",
+  "description": "vue3-preview-file",
   "files": [
     "dist",
     "demo.png"
   ],
   "keywords": [
-    "vue3-preview-compent"
+    "vue3-preview-file"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ZhangChuan01/vue3-preview-compent.git"
+    "url": "https://github.com/ZhangChuan01/vue3-preview-file.git"
   },
   "license": "MIT",
   "scripts": {

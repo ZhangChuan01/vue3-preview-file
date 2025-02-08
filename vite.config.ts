@@ -55,7 +55,7 @@ export default defineConfig({
     lib: {
       // src/indext.ts 是我们导出组件的地方
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'vue3-preview-compent',
+      name: 'vue3-preview-file',
       // 运行构建时输出文件的名称
       fileName: 'index'
     },
