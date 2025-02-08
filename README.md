@@ -18,8 +18,8 @@ vue3-preview-file
         app.use(Vue3PreviewFile)
             .mount('#app')
 ##### 3. 使用demo     
-[demo1](https://github.com/ZhangChuan01/vue3-preview-file/main/demo1.png)
-[demo2](https://github.com/ZhangChuan01/vue3-preview-file/main/demo2.png)
+[demo1](https://github.com/ZhangChuan01/vue3-preview-file/blob/main/demo1.png)
+[demo2](https://github.com/ZhangChuan01/vue3-preview-file/blob/main/demo2.png)
 [详细使用](https://github.com/ZhangChuan01/vue3-preview-file/blob/main/src/App.vue)
 ##### 4. 详细参数设置        
     dialogVisible(必传，boolean，组件显示与隐藏)    
