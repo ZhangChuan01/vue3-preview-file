@@ -23,7 +23,7 @@
     },
     "types": ["vite-plugin-svg-icons/client","node"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/*.vue", "src/**/*.vue", "src/**/**/*.vue", "src/**/**/**/*.vue","./auto-imports.d.ts"],
-  "exclude": ["src/main.ts"],
+  "include": ["./src/**/*.vue","./src/**/*.ts","./auto-imports.d.ts"],
+  // "exclude": ["src/main.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
