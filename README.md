@@ -8,14 +8,14 @@ vue3-preview-file
     npm install vue3-preview-file --save
 ##### 2. 引入    
     引入css   
-    import "vue3-preview-file/dist/style.css";    
+    import "vue3-preview-file/style.css";    
 
     引入组件   
         单独引入    
-        import { PreviewFile } from 'vue3-preview-file/dist'   
+        import { PreviewFile } from 'vue3-preview-file'   
         全局注册
-        import Vue3PreviewFile from 'vue3-preview-file/dist'    
-        app.use(Vue3PreviewFile)
+        import PreviewFile from 'vue3-preview-file'    
+        app.use(PreviewFile)
             .mount('#app')
 ##### 3. 使用demo     
 ![demo1](https://github.com/ZhangChuan01/vue3-preview-file/blob/main/demo1.png)
