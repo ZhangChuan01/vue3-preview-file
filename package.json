@@ -1,6 +1,6 @@
 {
   "name": "vue3-preview-file",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "type": "module",
   "description": "vue3-preview-file",
   "main": "dist/index.js",
@@ -15,8 +15,7 @@
     "./*": "./dist/*"
   },
   "files": [
-    "dist",
-    "demo.png"
+    "dist"
   ],
   "keywords": [
     "vue3-preview-file"
