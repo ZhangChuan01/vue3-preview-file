@@ -1,13 +1,13 @@
 <script lang="ts">
 export interface DownLoad {
-  url: string
+  url?: string
   method: string
   data?: any
   params?: any
 }
 export interface FileInfo {
   name: string
-  filePath: string
+  filePath?: string
 }
 </script>
 <script setup lang='ts'>
@@ -65,7 +65,7 @@ const getFileData = async () => {
     privewContainer.innerHTML = `<img src="${props.file.filePath}" />`
   }else if(type === 'pdf'){
     if(props.pdfOptions.type === 'canvas'){
-      loadPdf(privewContainer as HTMLDivElement, props.file.filePath,null)
+      loadPdf(privewContainer as HTMLDivElement, props.file.filePath ?? '',null)
     }else{
       privewContainer.innerHTML = `<iframe src="${props.file.filePath}" />`
     }

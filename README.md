@@ -1,7 +1,7 @@
 vue3-preview-file
 ================
 ### vue3文件预览组件(TS版本,依赖于vue3,element-plus)
-### 可预览word，excel，图片，pdf
+### 可预览word（使用docx-preview预览），excel（使用xlsx + canvas-datagrid预览），图片，pdf（使用浏览器直接打开或者pdfjs）
 #### 如何使用
 ##### 1. 安装
     yarn add vue3-preview-file --save
@@ -28,12 +28,12 @@ file(必传，object，文件信息)
 | 字段名   | 是否必传 | 类型   | 描述                           |
 | -------- | -------- | ------ | ------------------------------ |
 | name     | 是       | string | 文件名称（包含后缀的完整名称） |
-| filePath | 是       | camera | 文件地址                       |
+| filePath | 否       | string | 文件地址（图片，pdf预览模式为browser则必传）                      |
 
 download(图片非必传，其余必传，object，获取二进制文件流的接口详细信息)
 |  字段名  | 是否必传 | 类型 | 描述  |
 |  ----  |  ------  |  ----  | ----  |
-| url | 是 | string | 获取二进制文件流接口地址，注意，Excel返回的为arraybuffer,其他为blob |
+| url | 否 | string | 获取二进制文件流接口地址，Excel，Word必传，注意，Excel返回的为arraybuffer,其他为blob |
 | method | 否 | string | 请求方式，默认get |
 | data | 否 | any | body传参 |
 | params | 否 | any | url传参 |
